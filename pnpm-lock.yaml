@@ -8,6 +8,7 @@ specifiers:
   autoprefixer: ^10.4.13
   eslint: ^8.27.0
   eslint-plugin-vue: ^9.7.0
+  iconoir: ^5.4.0
   lodash: ^4.17.21
   path: ^0.12.7
   pinia: ^2.0.24
@@ -23,6 +24,7 @@ specifiers:
 
 dependencies:
   '@vueuse/core': 9.5.0_vue@3.2.45
+  iconoir: 5.4.0
   lodash: 4.17.21
   path: 0.12.7
   pinia: 2.0.24_mgnvym7yiazkylwwogi5r767ue
@@ -1239,6 +1241,10 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
     dev: true
+
+  /iconoir/5.4.0:
+    resolution: {integrity: sha512-oxTLDK6pSEd52KM+7PI8hUsV2FgRWIUwNLFTIAs2g7/ZTU1mWYDPRXEyNyKm1BW6+TDtSsrsjvER6jzQ4CyyKw==}
+    dev: false
 
   /ignore/5.2.0:
     resolution: {integrity: sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==}
