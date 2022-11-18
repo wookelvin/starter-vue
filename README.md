@@ -11,6 +11,13 @@ Using
 - postcss with nesting, autoprefixer, importing
 - eslintrc
 - @ alias setup
+- @vueuse/core
+- lodash
+
+
+# To get started 
+
+
 
 
 ```bash
