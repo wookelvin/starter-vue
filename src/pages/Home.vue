@@ -27,6 +27,7 @@ useMeta({
         <li>@vueuse/core</li>
         <li>lodash</li>
         <li>iconoir</li>
+        <li>daisy UI</li>
       </ul>
       <div>
         <button class="btn">

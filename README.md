@@ -17,10 +17,8 @@ Using
 
 # To get started 
 
-
-
-
 ```bash
-pnpm install
-pnpm run dev
+npm i -g @antfu/ni
+ni
+nr dev
 ```
