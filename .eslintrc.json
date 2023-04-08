@@ -1,32 +1,33 @@
 {
-    "root": true,
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "node": true
-    },
-    "extends": [
-        "plugin:vue/vue3-recommended",
-        "eslint:recommended",
-        "@vue/eslint-config-typescript"
-    ],
-    "parserOptions": {
-        "ecmaVersion": 2021
-    },
-    "plugins": [],
-    "rules": {
-        "vue/valid-template-root": "off",
-        "vue/multi-word-component-names": "off",
-        "vue/max-attributes-per-line": [
-            "error",
-            {
-                "singleline": {
-                    "max": 1
-                },
-                "multiline": {
-                    "max": 1
-                }
-            }
-        ]
-    }
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:vue/vue3-recommended",
+    "eslint:recommended",
+    "@vue/eslint-config-typescript",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2021
+  },
+  "plugins": [],
+  "rules": {
+    "vue/valid-template-root": "off",
+    "vue/multi-word-component-names": "off",
+    "vue/max-attributes-per-line": [
+      "error",
+      {
+        "singleline": {
+          "max": 1
+        },
+        "multiline": {
+          "max": 1
+        }
+      }
+    ]
+  }
 }
