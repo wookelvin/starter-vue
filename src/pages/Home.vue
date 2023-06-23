@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { useMeta } from 'vue-meta';
 
-useMeta({
-  title: 'Home',
-  htmlAttrs: { lang: 'en', amp: true }
-});
 </script>
 
 <template>
