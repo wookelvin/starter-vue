@@ -1,18 +1,46 @@
 <script setup lang="ts">
 import { ToneTrackInfo } from "@/models/ToneTrackInfo";
 import { TrackInfo } from "@/models/TrackInfo";
+import { uniqueId } from "lodash";
 const media = useMediaStore();
 // const media = useToneStore();
-const props = defineProps<{
-  track: TrackInfo;
-  index: number;
-}>();
+const props = withDefaults(
+  defineProps<{
+    id?: string;
+    track: TrackInfo;
+    index: number;
+  }>(),
+  {
+    id: () => uniqueId("track"),
+  },
+);
 
-const loudness = ref(-100);
+function setMeter(level: number) {
+  const meter = document.getElementById(
+    props.id + "-meter",
+  ) as HTMLMeterElement;
+  if (!meter) {
+    return;
+  }
+
+  if (isFinite(level)) {
+    if (level <= -100) {
+      meter.value = -100;
+    } else if (level >= 10) {
+      meter.value = 10;
+    } else {
+      console.log("setting meter", level, meter);
+      meter.value = level;
+    }
+  } else {
+    meter.value = -100;
+  }
+}
 
 function loop() {
   if (!props.track.playing) {
-    loudness.value = -100;
+    //loudness.value = -100;
+    setMeter(-100);
     requestAnimationFrame(loop);
     return;
   }
@@ -35,11 +63,11 @@ function loop() {
   const peakInstantaneousPowerDecibels =
     10 * Math.log10(peakInstantaneousPower);
 
-  loudness.value = peakInstantaneousPowerDecibels;
-
+  setMeter(peakInstantaneousPowerDecibels);
   requestAnimationFrame(loop);
 }
-loop();
+
+onMounted(() => loop());
 </script>
 
 <template>
@@ -66,7 +94,13 @@ loop();
         @update:model-value="media.updateGain(index)"
         :label="`${track.track.order} ${track.track.name}`"
       />
-      <meter class="loudness" min="-100" max="10" :value="loudness"></meter>
+      <meter
+        class="loudness"
+        min="-100"
+        max="10"
+        value="-100"
+        :id="`${id}-meter`"
+      />
     </div>
   </div>
 </template>
@@ -76,14 +110,15 @@ loop();
   @apply flex-grow;
 }
 
-.loudness {
-  @apply mt-1 h-1 w-full rounded-full bg-gray-200;
-}
 .meter {
   width: 50%;
   @apply h-full rounded-full bg-red-600;
 }
-meter {
+meter.loudness {
   @apply mt-1;
+  margin-top: unset;
+  height: 20px;
+  background-color: unset;
+  width: 100%;
 }
 </style>
