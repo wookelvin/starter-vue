@@ -23,7 +23,7 @@ export default defineConfig({
         "@vueuse/core",
       ],
       dts: "src/auto-imports.d.ts",
-      dirs: ["src/config", "src/stores"],
+      dirs: ["src/config", "src/stores", "src/models"],
       vueTemplate: true,
     }),
 

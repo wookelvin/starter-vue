@@ -1,0 +1,8 @@
+@import "@fortawesome/fontawesome-pro/css/fontawesome.css";
+@import "@fortawesome/fontawesome-pro/css/light.css";
+@import "@fortawesome/fontawesome-pro/css/thin.css";
+@import "@fortawesome/fontawesome-pro/css/solid.css";
+
+.fa-spin {
+  animation-duration: 0.75s;
+}
