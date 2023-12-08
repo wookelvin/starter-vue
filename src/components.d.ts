@@ -8,15 +8,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Blank: typeof import('./components/Blank.vue')['default']
-    Button: typeof import('./components/common/Button.vue')['default']
-    ButtonToggle: typeof import('./components/ButtonToggle.vue')['default']
     Container: typeof import('./components/Container.vue')['default']
-    Fader: typeof import('./components/Fader.vue')['default']
-    InnerButton: typeof import('./components/common/InnerButton.vue')['default']
-    Input: typeof import('./components/common/Input.vue')['default']
-    Knob: typeof import('./components/Knob.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Track: typeof import('./components/Track.vue')['default']
   }
 }

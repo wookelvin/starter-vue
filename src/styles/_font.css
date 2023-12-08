@@ -1,3 +1,5 @@
+@import "iconoir/css/iconoir.css";
+
 html,
 body,
 p,
@@ -34,4 +36,8 @@ h5 {
 }
 h6 {
   font-size: 1.2em;
+}
+
+*[class^="iconoir-"] {
+  display: inline-block;
 }

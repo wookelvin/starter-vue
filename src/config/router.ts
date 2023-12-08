@@ -1,21 +1,13 @@
-import { createWebHistory, createRouter, RouteRecordRaw } from "vue-router";
+import { createWebHistory, createRouter, RouteRecordRaw } from 'vue-router'
 
 const routes: RouteRecordRaw[] = [
-  {
-    path: "/",
-    component: () => import("@/pages/Home.vue"),
-  },
-  {
-    path: "/audio-api",
-    component: () => import("@/pages/AudioApi.vue"),
-  },
-  {
-    path: "/tonejs",
-    component: () => import("@/pages/Tone.vue"),
-  },
+    {
+        path: '/',
+        component: () => import('@/pages/Home.vue')
+    },
 ];
 
 export const router = createRouter({
-  history: createWebHistory(),
-  routes,
+    history: createWebHistory(),
+    routes
 });
